@@ -19,7 +19,6 @@ export const BentoCard: React.FC<BentoCardProps> = ({
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        borderRadius: "var(--radius-6)", // Extra large radius for Bento look
         overflow: "hidden",
         position: "relative",
       }}

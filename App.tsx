@@ -29,7 +29,7 @@ const App: React.FC = () => {
       accentColor="indigo"
       grayColor="slate"
       panelBackground="translucent"
-      radius="large"
+      radius="medium"
     >
       <Box style={{ backgroundColor: "var(--slate-1)", minHeight: "100vh" }}>
         <Container size="4" p="5">
@@ -84,7 +84,6 @@ const App: React.FC = () => {
                           <Box
                             p="4"
                             style={{
-                              borderRadius: "var(--radius-5)",
                               backgroundColor: "var(--slate-3)",
                               boxShadow: "var(--shadow-4)",
                               transition: "transform 0.3s",
@@ -304,7 +303,6 @@ const App: React.FC = () => {
                     style={{
                       backgroundColor: "var(--emerald-a3)",
                       color: "var(--emerald-11)",
-                      borderRadius: "var(--radius-5)",
                     }}
                   >
                     <Code2 size={32} />
@@ -344,7 +342,6 @@ const App: React.FC = () => {
                     style={{
                       backgroundColor: "var(--orange-a3)",
                       color: "var(--orange-11)",
-                      borderRadius: "var(--radius-5)",
                     }}
                   >
                     <Github size={32} />
@@ -393,7 +390,6 @@ const App: React.FC = () => {
                           style={{
                             backgroundColor: "rgba(255,255,255,0.2)",
                             color: "white",
-                            borderRadius: "var(--radius-4)",
                             boxShadow: "var(--shadow-4)",
                           }}
                         >

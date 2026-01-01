@@ -15,7 +15,6 @@ export const ProfileCard: React.FC = () => {
           size="8"
           src={PROFILE_INFO.avatar}
           fallback={PROFILE_INFO.name.charAt(0)}
-          radius="large"
         />
 
         <Flex direction="column" gap="1">
@@ -50,7 +49,7 @@ export const ProfileCard: React.FC = () => {
 
       <Flex gap="2" wrap="wrap" mt="2">
         {["Product Design", "Engineering", "Creative Tech"].map((tag) => (
-          <Badge key={tag} size="2" variant="soft" radius="large" color="gray">
+          <Badge key={tag} size="2" variant="soft" color="gray">
             {tag}
           </Badge>
         ))}

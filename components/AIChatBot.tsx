@@ -38,7 +38,6 @@ export const AIChatBot: React.FC = () => {
           style={{
             backgroundColor: "var(--indigo-a3)",
             color: "var(--indigo-11)",
-            borderRadius: "var(--radius-3)",
             border: "1px solid var(--indigo-a5)",
           }}
         >
@@ -86,7 +85,6 @@ export const AIChatBot: React.FC = () => {
               p="5"
               style={{
                 border: "1px dashed var(--slate-6)",
-                borderRadius: "var(--radius-4)",
                 textAlign: "center",
               }}
             >
@@ -104,7 +102,6 @@ export const AIChatBot: React.FC = () => {
           placeholder="Ask a question..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          style={{ borderRadius: "var(--radius-4)" }}
         >
           <TextField.Slot p="0" mr="1">
             <IconButton
