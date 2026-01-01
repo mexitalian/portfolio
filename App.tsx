@@ -213,16 +213,29 @@ const App: React.FC = () => {
                       size="4"
                       style={{ padding: 0, overflow: "hidden" }}
                     >
-                      <Box position="relative">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          style={{
-                            width: "100%",
-                            aspectRatio: "16/9",
-                            objectFit: "cover",
-                          }}
-                        />
+                      <Box position="relative" style={{ aspectRatio: "16/9" }}>
+                        {project.videoUrl ? (
+                          <iframe
+                            width="100%"
+                            height="100%"
+                            src={project.videoUrl}
+                            title={project.title}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            style={{ display: "block" }}
+                          ></iframe>
+                        ) : (
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "cover",
+                            }}
+                          />
+                        )}
                         <Dialog.Close>
                           <Box position="absolute" top="4" right="4">
                             <IconButton

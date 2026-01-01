@@ -49,11 +49,13 @@ export const SOCIAL_LINKS: SocialItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    title: "Domo",
-    description: "A smart home controller interface built for simplicity.",
-    image: "https://picsum.photos/seed/domo/800/600",
-    link: "#",
-    tags: ["Design", "Mobile"],
+    title: "Kinetic State Vision",
+    description:
+      "Transforming complex data into agentic action. Explore our core philosophy and technological stack.",
+    image: "https://img.youtube.com/vi/lyNjTEs6-ZM/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/lyNjTEs6-ZM",
+    link: "https://youtu.be/lyNjTEs6-ZM",
+    tags: ["AI", "Agentic Systems"],
   },
   {
     title: "Luma",

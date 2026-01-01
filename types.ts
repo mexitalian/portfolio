@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 
 // Adding React import to provide the React namespace required for React.ReactNode
 export interface BentoCardProps {
@@ -22,5 +21,6 @@ export interface ProjectItem {
   description: string;
   image: string;
   link: string;
+  videoUrl?: string; // Optional field for video content
   tags: string[];
 }

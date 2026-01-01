@@ -24,14 +24,18 @@ const fragmentShaderSource = `
 
     float dist = distance(stComp, mouseComp);
     
-    // Base colors
-    vec3 colorBg = vec3(0.04, 0.04, 0.06); // Deep slate
-    vec3 colorSpot = vec3(0.16, 0.18, 0.30); // Doubled intensity highlight
+    // Base colors - Even deeper black/slate
+    vec3 colorBg = vec3(0.04, 0.04, 0.06); 
+    vec3 colorSpot = vec3(0.12, 0.15, 0.25); 
     
-    // Smooth spotlight falloff (sharpened slightly for more impact)
-    float spotlight = smoothstep(0.6, 0.0, dist);
+    // Tighter spotlight with a sharper, more dramatic falloff
+    // Reducing 0.6 to 0.35 makes the central brightness smaller
+    float spotlight = smoothstep(0.35, 0.0, dist);
     
-    // Add a subtle pulse to the background (doubled intensity)
+    // Use power for a "tighter" and more aggressive gradient Curve
+    spotlight = pow(spotlight, 2.5);
+    
+    // background pulse (reduced to keep it subtle against darker BG)
     float pulse = sin(u_time * 0.5) * 0.02;
     vec3 finalColor = colorBg + (colorSpot * spotlight) + pulse;
     
