@@ -441,7 +441,7 @@ const App: React.FC = () => {
                 color="gray"
                 style={{ textTransform: "uppercase", letterSpacing: "0.4em" }}
               >
-                &copy; {new Date().getFullYear()} @mexitalian
+                &copy; {new Date().getFullYear()} Kinetic State
               </Text>
               <Box display={{ initial: "none", md: "block" }}>
                 <Separator

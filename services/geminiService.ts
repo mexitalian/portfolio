@@ -1,11 +1,11 @@
 import { GoogleGenAI } from "@google/genai";
-import { PROFILE_INFO } from '../constants.tsx';
+import { PROFILE_INFO } from "../constants.tsx";
 
 export const askAI = async (question: string): Promise<string> => {
   try {
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: "gemini-3-flash-preview",
       contents: question,
       config: {
         systemInstruction: `
@@ -13,16 +13,19 @@ export const askAI = async (question: string): Promise<string> => {
           Handle: ${PROFILE_INFO.handle}.
           Location: ${PROFILE_INFO.location}.
           Bio: ${PROFILE_INFO.bio}.
-          Role: Product Designer & Frontend Engineer.
-          Tone: Professional, witty, and concise. 
+          Role: Advanced AI Agency specializing in Agentic Systems.
+          Tone: Professional, forward-thinking, and concise. 
           Respond in under 2 sentences. 
-          Knowledge: Design systems, React, TypeScript, and bento-style layouts.
+          Knowledge: Agentic workflows, generative AI integration, and high-performance digital interfaces.
         `,
         temperature: 0.7,
-      }
+      },
     });
 
-    return response.text || "I'm having trouble thinking clearly right now. Try again?";
+    return (
+      response.text ||
+      "I'm having trouble thinking clearly right now. Try again?"
+    );
   } catch (error) {
     console.error("Gemini SDK Error:", error);
     return "I'm currently taking a short break from the matrix. Please try asking again in a moment!";

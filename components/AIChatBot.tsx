@@ -89,7 +89,7 @@ export const AIChatBot: React.FC = () => {
               }}
             >
               <Text size="2" color="gray" weight="medium">
-                Ask me about Christian's stack or philosophy.
+                Ask me about Kinetic State's capabilities or philosophy.
               </Text>
             </Box>
           )}
