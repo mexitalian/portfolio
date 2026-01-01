@@ -1,47 +1,60 @@
-import React from 'react';
-import * as Avatar from '@radix-ui/react-avatar';
-import { PROFILE_INFO } from '../constants.tsx';
-import { MapPin } from 'lucide-react';
+import React from "react";
+import { Flex, Avatar, Heading, Text, Badge } from "@radix-ui/themes";
+import { PROFILE_INFO } from "../constants.tsx";
+import { MapPin } from "lucide-react";
 
 export const ProfileCard: React.FC = () => {
   return (
-    <div className="flex flex-col h-full justify-between gap-6">
-      <div className="flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
-        <Avatar.Root className="inline-flex items-center justify-center align-middle overflow-hidden select-none w-28 h-28 rounded-[2rem] border border-[var(--slate6)] bg-[var(--slate3)] shadow-xl">
-          <Avatar.Image
-            className="w-full h-full object-cover rounded-[inherit]"
-            src={PROFILE_INFO.avatar}
-            alt={PROFILE_INFO.name}
-          />
-          <Avatar.Fallback
-            className="w-full h-full flex items-center justify-center bg-[var(--slate4)] text-[var(--slate11)] text-2xl font-bold"
-            delayMs={600}
-          >
-            {PROFILE_INFO.name.charAt(0)}
-          </Avatar.Fallback>
-        </Avatar.Root>
-        
-        <div className="flex flex-col gap-1.5">
-          <h1 className="text-3xl font-black tracking-tight text-[var(--slate12)]">{PROFILE_INFO.name}</h1>
-          <p className="text-indigo-400 font-bold uppercase tracking-widest text-[10px]">{PROFILE_INFO.handle}</p>
-          <div className="flex items-center gap-1.5 text-[var(--slate11)] mt-2 justify-center md:justify-start font-medium">
-            <MapPin size={14} className="text-[var(--slate9)]" />
-            <span className="text-xs uppercase tracking-wider">{PROFILE_INFO.location}</span>
-          </div>
-        </div>
-      </div>
-      
-      <p className="text-[var(--slate11)] text-lg leading-relaxed font-medium">
-        {PROFILE_INFO.bio}
-      </p>
+    <Flex direction="column" height="100%" justify="between" gap="6">
+      <Flex
+        direction={{ initial: "column", md: "row" }}
+        gap="6"
+        align={{ initial: "center", md: "start" }}
+      >
+        <Avatar
+          size="8"
+          src={PROFILE_INFO.avatar}
+          fallback={PROFILE_INFO.name.charAt(0)}
+          radius="large"
+        />
 
-      <div className="flex flex-wrap gap-2 pt-2">
-        {['Product Design', 'Engineering', 'Creative Tech'].map(tag => (
-          <span key={tag} className="px-4 py-1.5 bg-[var(--slate3)] border border-[var(--slate6)] rounded-xl text-[10px] font-bold text-[var(--slate11)] uppercase tracking-wider">
+        <Flex direction="column" gap="1">
+          <Heading size="8" weight="bold" tracking="tight">
+            {PROFILE_INFO.name}
+          </Heading>
+          <Text
+            size="2"
+            weight="bold"
+            color="indigo"
+            style={{ textTransform: "uppercase", letterSpacing: "0.1em" }}
+          >
+            {PROFILE_INFO.handle}
+          </Text>
+          <Flex align="center" gap="2" mt="2">
+            <MapPin size={14} style={{ color: "var(--slate-10)" }} />
+            <Text
+              size="1"
+              weight="medium"
+              color="gray"
+              style={{ textTransform: "uppercase", letterSpacing: "0.05em" }}
+            >
+              {PROFILE_INFO.location}
+            </Text>
+          </Flex>
+        </Flex>
+      </Flex>
+
+      <Text size="4" color="gray" mt="2">
+        {PROFILE_INFO.bio}
+      </Text>
+
+      <Flex gap="2" wrap="wrap" mt="2">
+        {["Product Design", "Engineering", "Creative Tech"].map((tag) => (
+          <Badge key={tag} size="2" variant="soft" radius="large" color="gray">
             {tag}
-          </span>
+          </Badge>
         ))}
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 };

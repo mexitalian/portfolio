@@ -1,22 +1,30 @@
-import React from 'react';
-import { BentoCardProps } from '../types.ts';
+import React from "react";
+import { Card, Box } from "@radix-ui/themes";
+import { BentoCardProps } from "../types.ts";
 
-export const BentoCard: React.FC<BentoCardProps> = ({ 
-  children, 
-  className = "", 
-  colSpan = "col-span-1", 
-  rowSpan = "row-span-1" 
+export const BentoCard: React.FC<BentoCardProps> = ({
+  children,
+  className = "",
+  colSpan = "",
+  rowSpan = "",
 }) => {
+  // We'll use style for colSpan/rowSpan if they are passed as raw grid values,
+  // but in Radix Themes we'll likely handle the grid in the parent.
+  // For now, let's keep it simple and use a Radix Card as the base.
   return (
-    <div 
-      className={`
-        bg-[var(--slate2)] border border-[var(--slate6)] rounded-[2.5rem]
-        transition-all duration-300 hover:border-[var(--slate8)]
-        flex flex-col relative overflow-hidden group shadow-lg
-        ${colSpan} ${rowSpan} ${className}
-      `}
+    <Card
+      size="3"
+      variant="surface"
+      style={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        borderRadius: "var(--radius-6)", // Extra large radius for Bento look
+        overflow: "hidden",
+        position: "relative",
+      }}
     >
       {children}
-    </div>
+    </Card>
   );
 };
