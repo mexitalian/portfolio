@@ -15,6 +15,7 @@ import {
   Globe,
 } from "lucide-react";
 import { SocialItem, ProjectItem } from "./types";
+import kineticVision from "./kinetic-vision.png";
 
 export const SOCIAL_LINKS: SocialItem[] = [
   {
@@ -52,7 +53,7 @@ export const PROJECTS: ProjectItem[] = [
     title: "Kinetic State Vision",
     description:
       "Transforming complex data into agentic action. Explore our core philosophy and technological stack.",
-    image: "./kinetic-vision.png",
+    image: kineticVision,
     videoUrl: "https://www.youtube.com/embed/lyNjTEs6-ZM",
     aspectRatio: "1/1",
     link: "https://youtu.be/lyNjTEs6-ZM",
